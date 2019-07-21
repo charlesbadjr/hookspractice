@@ -43,9 +43,21 @@ class CharPicker extends Component {
                 value={this.props.selectedChar}
                 className={this.props.side}
                 >
-                    
+                  {this.state.characters.map(char => (
+                      <option key={char.id} value={char.id}>
+                          {char.name}
+                      </option>
+                  ))};  
                 </select>
-            )
+            );
+        } else if (
+            !this.state.isLoading &&
+            (this.state.characters || this.state.characters.length === 0)
+        ) {
+            content = <p> could not fetch any data. </p>;
         }
+        return content;
     }
 }
+
+export default CharPicker;
