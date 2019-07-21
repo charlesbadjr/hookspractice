@@ -8,7 +8,7 @@ class Character extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         console.log('shouldcomponentUpdate');
         return (
-            nextProps.selectedChar !== timingSafeEqual.props.selectedChar ||
+            nextProps.selectedChar !== this.props.selectedChar ||
             nextState.loadedCharacter.id !== this.state.loadedCharacter.id ||
             nextState.isLoading !== this.state.isLoading
         );
@@ -40,7 +40,7 @@ class Character extends Component {
         })
         .then(charData => {
             const loadedCharacter = {
-                id: tis.props.selectedChar,
+                id: this.props.selectedChar,
                 name: charData.name,
                 height: charData.height,
                 colors: {

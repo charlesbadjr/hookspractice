@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './CharPicker.css';
+
 
 
 class CharPicker extends Component {
